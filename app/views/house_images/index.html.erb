@@ -1,3 +1,5 @@
 <% @house_images.each do |h| %>
   <%= render "house_image", house_image: h %>
 <% end %>
+
+<%= paginate @house_images %>

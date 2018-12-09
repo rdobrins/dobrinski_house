@@ -1,5 +1,5 @@
 class HouseImagesController < ApplicationController
-  before_action :authenticate!, only: [:create]
+  before_action :authenticate!, only: [:create, :index]
 
   skip_before_action :verify_authenticity_token
 
@@ -13,8 +13,12 @@ class HouseImagesController < ApplicationController
     end
   end
 
+  def show
+    @house_image = HouseImage.last
+  end
+
   def index
-    @house_images = HouseImage.all
+    @house_images = HouseImage.order(:created_at).page(params[:page])
   end
 
   private
