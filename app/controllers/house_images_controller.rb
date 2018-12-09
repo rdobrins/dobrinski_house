@@ -1,9 +1,19 @@
 class HouseImagesController < ApplicationController
-  def create
+  before_action :authenticate!, only: [:create]
 
+  skip_before_action :verify_authenticity_token
+
+  def create
+    @house_image = HouseImage.new(house_image_params)
+
+    if @house_image.save
+      render json: { status: 200 }
+    else
+      render json: { error: "Image could not be created. Please try again.", status: :unprocessable_entity }
+    end
   end
 
-  def Index
+  def index
     @house_images = HouseImage.all
   end
 

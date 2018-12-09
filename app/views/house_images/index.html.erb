@@ -1,1 +1,3 @@
-<h1>house images index</h1>
+<% @house_images.each do |h| %>
+  <%= render "house_image", house_image: h %>
+<% end %>
