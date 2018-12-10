@@ -24,7 +24,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'carrierwave'
-gem 'carrierwave-base64'
 gem 'fog-aws'
 gem 'kaminari'
 

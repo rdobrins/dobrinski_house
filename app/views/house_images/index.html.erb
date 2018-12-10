@@ -1,5 +1,9 @@
-<% @house_images.each do |h| %>
-  <%= render "house_image", house_image: h %>
-<% end %>
+<% if @house_images.present? %>
+  <% @house_images.each do |h| %>
+    <%= render "house_image", house_image: h %>
+  <% end %>
 
-<%= paginate @house_images %>
+  <%= paginate @house_images %>
+<% else %>
+  <h3>no images present</h3>
+<% end %>
