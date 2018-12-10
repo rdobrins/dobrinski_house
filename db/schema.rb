@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2018_12_08_215604) do
 
-  create_table "house_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "house_images", force: :cascade do |t|
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

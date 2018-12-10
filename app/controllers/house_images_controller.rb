@@ -19,7 +19,7 @@ class HouseImagesController < ApplicationController
   end
 
   def index
-    @house_images = HouseImage.order(:created_at).page(params[:page])
+    @house_images = HouseImage.order(created_at: :desc).page(params[:page])
   end
 
   private
