@@ -62,7 +62,7 @@ class FragmentsController < ApplicationController
   end
 
   def split_content
-    @split_content ||= decoded_content.split("_ryan_dobrinski_")
+    @split_content ||= decoded_content.split("_DIVIDER_")
   end
 
   def decoded_content

@@ -23,6 +23,7 @@ class CreateHouseImageService
 
   def file_cleanup
     File.delete("./public/#{file_name}")
+    @cluster.destroy
   end
 
   def write_file_to_tmp
