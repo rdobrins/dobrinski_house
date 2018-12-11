@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_08_215604) do
+ActiveRecord::Schema.define(version: 2018_12_11_140142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clusters", force: :cascade do |t|
+    t.string "stamp"
+    t.integer "number_of_fragments"
+    t.integer "total_character_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fragments", force: :cascade do |t|
+    t.bigint "cluster_id"
+    t.integer "cluster_order"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cluster_id"], name: "index_fragments_on_cluster_id"
+  end
 
   create_table "house_images", force: :cascade do |t|
     t.string "image"

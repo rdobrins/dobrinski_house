@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'house_images#show'
 
   get 'house_images/:client_token', :to => 'house_images#index'
-  resources :house_images, only: [:create, :show]
+  resources :house_images, only: [:show]
+  resources :fragments, only: [:create]
 end
