@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  skip_before_action :verify_authenticity_token
+
   def authenticate!
     render json: 'Access Denied, Invalid Token'.to_json, status: :unauthorized and return unless valid_token?
   end

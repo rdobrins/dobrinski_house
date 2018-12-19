@@ -1,5 +1,11 @@
-<% if @house_image %>
-  <%= render "house_image", house_image: @house_image %>
-<% else %>
-  <h2>No Image Present</h2>
-<% end %>
+<div class="images-container">
+  <div class="images-content">
+    <% if @show_images %>
+      <% @show_images.each do |img| %>
+        <%= render "house_image", house_image: img %>
+      <% end %>
+    <% else %>
+      <span>No Images Present.</span>
+    <% end %>
+  </div>
+</div>

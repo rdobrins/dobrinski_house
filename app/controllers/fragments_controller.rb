@@ -1,6 +1,4 @@
 class FragmentsController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
   before_action :authenticate!, only: [:create]
   after_action :compose_house_image, only: [:create]
 

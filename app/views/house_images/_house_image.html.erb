@@ -1,3 +1,6 @@
-<h1><%= house_image.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%D %I:%M") %></h1>
-
-<img src="<%= house_image.image_url %>">
+<div class="image">
+  <span>
+    <%= house_image.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%D %I:%M") %>
+  </span>
+  <img src="<%= house_image.image_url %>">
+</div>
