@@ -1,6 +1,6 @@
 <div class="images-container">
   <div class="images-content">
-    <% if @show_images %>
+    <% if @show_images.present? %>
       <% @show_images.each do |img| %>
         <%= render "house_image", house_image: img %>
       <% end %>
