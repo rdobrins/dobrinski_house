@@ -1,5 +1,8 @@
 class HouseImagesController < ApplicationController
+  include ::Concerns::AddressRecordKeeping
+
   before_action :authenticate!, only: [:index]
+  before_action :record_ip_address!, only: [:show]
 
   def show
     @show_images = show_images
