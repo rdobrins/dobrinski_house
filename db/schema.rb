@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_140142) do
+ActiveRecord::Schema.define(version: 2019_07_03_124801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "address_records", force: :cascade do |t|
+    t.string "ip_address", null: false
+    t.datetime "last_visited", default: "2019-07-03 14:04:32", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clusters", force: :cascade do |t|
     t.string "stamp"

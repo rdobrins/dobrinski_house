@@ -1,0 +1,2 @@
+class AddressRecord < ApplicationRecord
+end
