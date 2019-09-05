@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'house_images/:client_token', :to => 'house_images#index'
   resources :house_images, only: [:show]
   resources :fragments, only: [:create]
-  get 'locations', to: 'locations#index', :defaults => { :format => 'json' }
+  # get 'locations', to: 'locations#index', :defaults => { :format => 'json' }
 end
